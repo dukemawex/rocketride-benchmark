@@ -2,18 +2,18 @@
   "benchmark": "authoring-effort",
   "hypothesis": "RR authoring carries zero imperative concurrency code and validates offline; LangChain authoring forces an unguided 3-way concurrency choice where one crashes, one silently serializes, one is slow (measured in concurrent-processing)",
   "provenance": {
-    "engine_dir": "/opt/rocketride-bench/engine",
+    "engine_dir": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/engine",
     "engine_version": "Version: 3.2.1.30 hash: 114509c6 stamp: 2026-05-29T19:19:06Z",
     "uri": "ws://localhost:5565",
-    "cpu_brand": "Apple M5 Pro",
-    "machine": "macOS-26.5.1-arm64-arm-64bit",
-    "arch": "arm64",
-    "physical_cores": 18,
-    "logical_cores": 18,
-    "total_ram_gib": 24.0,
-    "python": "3.12.13",
-    "engine_sha256": "4ad67d110cac51a0c683e8724b47a8d22e3b7543d9684a78b750f521c566ebf7",
-    "engine_size_bytes": 79021832
+    "cpu_brand": "x86_64",
+    "machine": "Linux-6.8.0-1060-aws-x86_64-with-glibc2.35",
+    "arch": "x86_64",
+    "physical_cores": 4,
+    "logical_cores": 8,
+    "total_ram_gib": 15.34,
+    "python": "3.11.15",
+    "engine_sha256": "cf1fbf9ce72d15fef0257daaf0bfef130a263535be08c7160a0e0dada0371316",
+    "engine_size_bytes": 229626976
   },
   "rocketride": {
     "file": "rr/workflow.pipe",
@@ -79,6 +79,10 @@
     "lc_imperative_lines_max": 17,
     "lc_decision_points_correct_version": 5,
     "lc_natural_idioms_delivering_concurrency": 0,
-    "lc_idiom_outcomes": {"batch": "crashes", "abatch": "silently_serializes", "seq": "slow_correct"}
+    "lc_idiom_outcomes": {
+      "batch": "crashes",
+      "abatch": "silently_serializes",
+      "seq": "slow_correct"
+    }
   }
 }

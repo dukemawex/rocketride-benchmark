@@ -2,23 +2,23 @@
   "benchmark": "concurrent-processing",
   "hypothesis": "64 docs of stateful per-doc work: LangChain's idioms crash, serialize, or run sequential; RR's warm per-pipe topology is fast AND safe",
   "provenance": {
-    "engine_dir": "/opt/rocketride-bench/engine",
+    "engine_dir": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/engine",
     "engine_version": "Version: 3.2.1.30 hash: 114509c6 stamp: 2026-05-29T19:19:06Z",
     "uri": "ws://localhost:5565",
-    "cpu_brand": "Apple M5 Pro",
-    "machine": "macOS-26.5.1-arm64-arm-64bit",
-    "arch": "arm64",
-    "physical_cores": 18,
-    "logical_cores": 18,
-    "total_ram_gib": 24.0,
-    "python": "3.12.13",
-    "engine_sha256": "4ad67d110cac51a0c683e8724b47a8d22e3b7543d9684a78b750f521c566ebf7",
-    "engine_size_bytes": 79021832
+    "cpu_brand": "x86_64",
+    "machine": "Linux-6.8.0-1060-aws-x86_64-with-glibc2.35",
+    "arch": "x86_64",
+    "physical_cores": 4,
+    "logical_cores": 8,
+    "total_ram_gib": 15.34,
+    "python": "3.11.15",
+    "engine_sha256": "cf1fbf9ce72d15fef0257daaf0bfef130a263535be08c7160a0e0dada0371316",
+    "engine_size_bytes": 229626976
   },
   "langchain_provenance": {
     "lc_version": "0.3.86",
-    "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-    "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py",
+    "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+    "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py",
     "kind": "probe"
   },
   "params": {
@@ -36,10 +36,10 @@
     {
       "M": 8,
       "n_docs": 64,
-      "wall_s": 0.945,
-      "warm_s": 7.84,
-      "p50_ms": 108.34,
-      "p99_ms": 131.22,
+      "wall_s": 1.028,
+      "warm_s": 7.49,
+      "p50_ms": 126.46,
+      "p99_ms": 140.86,
       "markers": 72,
       "marker_pids": 8,
       "node_errors": 0,
@@ -50,10 +50,10 @@
     {
       "M": 16,
       "n_docs": 64,
-      "wall_s": 0.638,
-      "warm_s": 8.97,
-      "p50_ms": 144.85,
-      "p99_ms": 198.31,
+      "wall_s": 0.747,
+      "warm_s": 11.39,
+      "p50_ms": 180.85,
+      "p99_ms": 201.11,
       "markers": 80,
       "marker_pids": 16,
       "node_errors": 0,
@@ -68,23 +68,23 @@
       "n": 64,
       "io_s": 0.1,
       "max_concurrency": 64,
-      "wall_s": 0.0098485829657875,
+      "wall_s": 0.024103494999963004,
       "n_ok": 0,
       "n_err": 64,
       "status": "crash",
       "error_type": "sqlite3.ProgrammingError",
-      "error_example": "SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 8284774016 and this is thread id 6123646976.",
+      "error_example": "SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 132974952440448 and this is thread id 132974893844032.",
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     },
     "abatch_blocking": {
       "mode": "abatch_blocking",
       "n": 64,
       "io_s": 0.1,
       "max_concurrency": 64,
-      "wall_s": 6.5630299159674905,
+      "wall_s": 6.85241478900025,
       "n_ok": 64,
       "n_err": 0,
       "status": "ok",
@@ -92,15 +92,15 @@
       "error_example": null,
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     },
     "seq": {
       "mode": "seq",
       "n": 64,
       "io_s": 0.1,
       "max_concurrency": 64,
-      "wall_s": 6.591990249988157,
+      "wall_s": 6.875200855000003,
       "n_ok": 64,
       "n_err": 0,
       "status": "ok",
@@ -108,8 +108,8 @@
       "error_example": null,
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     }
   },
   "rr_appendix_threads4": {
@@ -117,15 +117,15 @@
     "markers": 32,
     "distinct_tids": 4,
     "node_errors": 31,
-    "error_example": "RRBENCH_ERR\tProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 6203469824 and this i"
+    "error_example": "RRBENCH_ERR\tProgrammingError: SQLite objects created in a thread can only be used in that same thread. The object was created in thread id 123768309503552 and t"
   },
   "verdict_metrics": {
-    "rr_topM_wall_s": 0.638,
+    "rr_topM_wall_s": 0.747,
     "rr_topM_ok": true,
     "lc_batch_shared_status": "crash",
     "lc_batch_shared_error": "sqlite3.ProgrammingError",
-    "lc_abatch_blocking_wall_s": 6.56,
-    "lc_seq_wall_s": 6.59,
+    "lc_abatch_blocking_wall_s": 6.85,
+    "lc_seq_wall_s": 6.88,
     "lc_version": "0.3.86"
   }
 }

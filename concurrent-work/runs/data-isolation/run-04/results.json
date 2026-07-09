@@ -1,24 +1,24 @@
 {
   "benchmark": "data-isolation",
-  "hypothesis": "per-pipe instance data is isolated by construction; a naive shared GLOBAL dict under 32 LangChain workers silently loses updates",
+  "hypothesis": "per-pipe instance data is isolated by construction; a naive shared GLOBAL dict under 64 LangChain workers silently loses updates",
   "provenance": {
-    "engine_dir": "/opt/rocketride-bench/engine",
+    "engine_dir": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/engine",
     "engine_version": "Version: 3.2.1.30 hash: 114509c6 stamp: 2026-05-29T19:19:06Z",
     "uri": "ws://localhost:5565",
-    "cpu_brand": "Apple M5 Pro",
-    "machine": "macOS-26.5.1-arm64-arm-64bit",
-    "arch": "arm64",
-    "physical_cores": 18,
-    "logical_cores": 18,
-    "total_ram_gib": 24.0,
-    "python": "3.12.13",
-    "engine_sha256": "4ad67d110cac51a0c683e8724b47a8d22e3b7543d9684a78b750f521c566ebf7",
-    "engine_size_bytes": 79021832
+    "cpu_brand": "x86_64",
+    "machine": "Linux-6.8.0-1060-aws-x86_64-with-glibc2.35",
+    "arch": "x86_64",
+    "physical_cores": 4,
+    "logical_cores": 8,
+    "total_ram_gib": 15.34,
+    "python": "3.11.15",
+    "engine_sha256": "cf1fbf9ce72d15fef0257daaf0bfef130a263535be08c7160a0e0dada0371316",
+    "engine_size_bytes": 229626976
   },
   "langchain_provenance": {
     "lc_version": "0.3.86",
-    "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-    "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py",
+    "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+    "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py",
     "kind": "probe"
   },
   "params": {
@@ -34,8 +34,8 @@
   "rocketride": {
     "M": 32,
     "n_docs": 256,
-    "wall_s": 1.495,
-    "warm_s": 12.67,
+    "wall_s": 3.081,
+    "warm_s": 19.05,
     "pipes_reporting": 32,
     "pipes_with_clean_partition": 32,
     "docs_lost": 0,
@@ -47,55 +47,55 @@
       "n": 256,
       "max_concurrency": 32,
       "gap_iters": 20000,
-      "wall_s": 0.14410658302949741,
+      "wall_s": 0.26888458499979606,
       "expected": 256,
-      "observed_counter": 112,
-      "lost_updates": 144,
+      "observed_counter": 123,
+      "lost_updates": 133,
       "items_len": 256,
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     },
     {
       "n": 256,
       "max_concurrency": 32,
       "gap_iters": 50000,
-      "wall_s": 0.3574750419938937,
+      "wall_s": 0.6801541280001402,
       "expected": 256,
-      "observed_counter": 69,
-      "lost_updates": 187,
+      "observed_counter": 75,
+      "lost_updates": 181,
       "items_len": 256,
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     },
     {
       "n": 256,
       "max_concurrency": 32,
       "gap_iters": 100000,
-      "wall_s": 0.7330307500087656,
+      "wall_s": 1.3272888140008945,
       "expected": 256,
-      "observed_counter": 41,
-      "lost_updates": 215,
+      "observed_counter": 65,
+      "lost_updates": 191,
       "items_len": 256,
       "lc_version": "0.3.86",
       "kind": "probe",
-      "lc_python": "/opt/rocketride-bench/.venv/bin/python",
-      "langchain_core_file": "/opt/rocketride-bench/.venv/lib/python3.12/site-packages/langchain_core/__init__.py"
+      "lc_python": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/bin/python",
+      "langchain_core_file": "/home/ubuntu/rocketride-benchmark/concurrent-work/harness/rocketride-bench/.venv/lib/python3.11/site-packages/langchain_core/__init__.py"
     }
   ],
   "verdict_metrics": {
     "rr_docs_lost": 0,
     "rr_docs_duplicated_or_leaked": 0,
     "rr_clean": true,
-    "lc_max_lost_updates": 215,
+    "lc_max_lost_updates": 191,
     "lc_max_lost_gap_iters": 100000,
     "lc_lost_by_gap": {
-      "20000": 144,
-      "50000": 187,
-      "100000": 215
+      "20000": 133,
+      "50000": 181,
+      "100000": 191
     },
     "lc_version": "0.3.86"
   }
